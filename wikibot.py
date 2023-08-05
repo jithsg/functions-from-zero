@@ -1,10 +1,21 @@
-#!/usr/bin/env python3
-import wikipedia
+# use click cli tool to create a command line interface to the bot
+import click
+
+# import the scrape function from mylib/bot.py
+from mylib.bot import scrape
 
 
-def scrape(name="Facebook", length=2):
-    result = wikipedia.summary(name, sentences=length)
-    return result
+@click.command()
+@click.option(
+    "--name",
+    help="The name of the entity to scrape from Wikipedia.",
+)
+def cli(name="facebook"):
+    """Simple program that scrapes a specified number of sentences from Wikipedia."""
+
+    result = scrape(name)
+    click.echo(result)
 
 
-print(scrape("wikipedia"))
+if __name__ == "__main__":
+    cli()
