@@ -8,3 +8,5 @@ fire
 uvicorn
 fastapi
 pydantic
+#openssl
+urllib3==1.26
