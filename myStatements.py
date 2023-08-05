@@ -21,5 +21,5 @@ type(my_dict)
 """### Loop"""
 
 for key, value in my_dict.items():
-  print(f"This is my key : {key}")
-  print(f"This is my value - {value}")
+    print(f"This is my key : {key}")
+    print(f"This is my value - {value}")
